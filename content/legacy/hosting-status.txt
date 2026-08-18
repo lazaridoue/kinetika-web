@@ -1,0 +1,11 @@
+=== DNS ===
+3.82.34.38
+3.82.34.38
+
+=== HTTP status ===
+no response
+no response
+no response
+
+=== Registration ===
+status:       ACTIVE

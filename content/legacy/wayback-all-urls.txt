@@ -1,0 +1,3 @@
+http://kinetika.consulting/ 20211204234436 200 text/html
+http://kinetika.consulting/favicon.ico 20220112180959 200 text/html
+http://kinetika.consulting/robots.txt 20211204234433 200 text/plain

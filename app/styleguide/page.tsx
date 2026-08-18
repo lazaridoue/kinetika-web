@@ -151,13 +151,13 @@ export default function StyleGuide() {
 
       <div className="mt-6 flex flex-wrap gap-4">
         <button className="rounded-md bg-signal px-5 py-3 text-paper">
-          Solicitar información
+          Request information
         </button>
         <button className="rounded-md border border-ink px-5 py-3 text-ink">
-          Ver cursos
+          View courses
         </button>
         <a href="#main" className="self-center underline">
-          Un enlace de texto
+          A Text Link
         </a>
       </div>
 
