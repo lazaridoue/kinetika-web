@@ -26,14 +26,15 @@ export function MobileNav() {
         onClick={() => setOpen(!open)}
         aria-expanded={open}
         aria-controls="mobile-nav"
+        aria-label={t("menu")}
         className="flex items-center gap-2 rounded-sm px-2 py-2 text-sm"
       >
         <span className="flex flex-col gap-[5px]" aria-hidden="true">
-          <span className="bg-ink block h-px w-5" />
-          <span className="bg-ink block h-px w-5" />
-          <span className="bg-ink block h-px w-5" />
+          <span className="bg-ink block h-px w-5" aria-hidden="true" />
+          <span className="bg-ink block h-px w-5" aria-hidden="true" />
+          <span className="bg-ink block h-px w-5" aria-hidden="true" />
         </span>
-        <span>{open ? t("closeMenu") : t("menu")}</span>
+        <span aria-hidden="true">{open ? t("closeMenu") : t("menu")}</span>
       </button>
 
       {open && (

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import { Cormorant_Garamond, Inter } from "next/font/google";
@@ -25,6 +26,23 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "metadata" });
+
+  return {
+    title: {
+      default: t("homeTitle"),
+      template: t("titleTemplate"),
+    },
+    description: t("description"),
+  };
+}
+
 export default async function LocaleLayout({
   children,
   params,
@@ -49,7 +67,7 @@ export default async function LocaleLayout({
             {t("skipToContent")}
           </a>
           <Header />
-          <main id="main" className="flex-1">
+          <main id="main" tabIndex={-1} className="flex-1">
             {children}
           </main>
           <Footer />
