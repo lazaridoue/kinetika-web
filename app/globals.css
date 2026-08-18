@@ -8,27 +8,23 @@
 
 @theme {
   /* --- Color -------------------------------------------------------------
-     The old site was near-black across every page. All seven usability
-     participants called it sad, gloomy, or too dark. The wordmark stays;
-     the surface inverts.
+     Black-and-gold system: ink stays the same, paper stays the same, and
+     the highlight becomes a gold family with high-contrast usage rules.
 
      Contrast against --color-paper, verified:
        ink        16.8 : 1   AAA
-       periwinkle  5.7 : 1   AA  (deepened from the persona deck's #8B84E0,
-                                  which only reached 4.3 : 1 and failed)
-       signal      5.6 : 1   AA
-       sage is a background only — never set type in it
+       gold       7.4 : 1   AAA on ink only
+       gold-deep  5.0 : 1   AA on paper
   */
-  --color-ink:        #161A1D;  /* type, wordmark, footer band */
-  --color-paper:      #F7F5F0;  /* primary surface, warm not clinical */
-  --color-sage:       #C8D5BB;  /* section bands, from the persona deck */
-  --color-periwinkle: #5B51C4;  /* links, interactive states */
-  --color-signal:     #1F6F5C;  /* CTAs, scholarship stats, admissions */
+  --color-ink: #161a1d; /* type, wordmark, footer band */
+  --color-paper: #f7f5f0; /* primary surface, warm not clinical */
+  --color-gold: #c9a227; /* accent for ink surfaces only */
+  --color-gold-deep: #8a6410; /* links, interactive states on paper */
 
   /* Support */
-  --color-ink-muted:   #5A6169;  /* secondary type, 6.1 : 1 on paper */
-  --color-rule:        #E2DED4;  /* hairlines, card borders */
-  --color-paper-raised:#FFFFFF;  /* cards lifted off the surface */
+  --color-ink-muted: #5a6169; /* secondary type, 6.1 : 1 on paper */
+  --color-rule: #e2ded4; /* hairlines, card borders */
+  --color-paper-raised: #ffffff; /* cards lifted off the surface */
 
   /* --- Type --------------------------------------------------------------
      "The font is different on each page, you have to be more uniform."
@@ -36,25 +32,25 @@
      pull quotes. Nothing else.
   */
   --font-display: var(--font-cormorant), Georgia, serif;
-  --font-sans:    var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 
-  --text-xs:   0.8125rem;
-  --text-sm:   0.9375rem;
-  --text-base: 1.0625rem;  /* 17px — the notes flag "font of the text" and
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem; /* 17px — the notes flag "font of the text" and
                               one participant said "the letter is very small" */
-  --text-lg:   1.25rem;
-  --text-xl:   1.5rem;
-  --text-2xl:  2rem;
-  --text-3xl:  2.75rem;
-  --text-4xl:  3.75rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.75rem;
+  --text-4xl: 3.75rem;
 
   /* --- Spacing and shape ------------------------------------------------- */
   --radius-sm: 0.375rem;
   --radius-md: 0.75rem;
   --radius-lg: 1.25rem;
 
-  --shadow-card: 0 1px 2px rgb(22 26 29 / 0.04),
-                 0 8px 24px rgb(22 26 29 / 0.06);
+  --shadow-card:
+    0 1px 2px rgb(22 26 29 / 0.04), 0 8px 24px rgb(22 26 29 / 0.06);
 }
 
 /* ==========================================================================
@@ -75,7 +71,9 @@
     text-rendering: optimizeLegibility;
   }
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     font-family: var(--font-display);
     font-weight: 500;
     line-height: 1.15;
@@ -84,18 +82,18 @@
   }
 
   p {
-    max-width: 68ch;  /* participants called dense pages "dirty" and "invasive" */
+    max-width: 68ch; /* participants called dense pages "dirty" and "invasive" */
     text-wrap: pretty;
   }
 
   a {
-    color: var(--color-periwinkle);
+    color: var(--color-gold-deep);
     text-underline-offset: 0.2em;
   }
 
   /* Issue #6. Keyboard focus must be visible on every interactive element. */
   :focus-visible {
-    outline: 3px solid var(--color-periwinkle);
+    outline: 3px solid var(--color-gold-deep);
     outline-offset: 2px;
     border-radius: var(--radius-sm);
   }
