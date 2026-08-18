@@ -96,3 +96,18 @@ to avoid.
 Plain Spanish, sentence case, active voice. Buttons name what happens: "Solicitar información," not
 "Enviar." Errors say what went wrong and how to fix it. The audience includes anxious 16-year-olds
 and parents worried about online scams — clarity reads as trustworthy, cleverness does not.
+
+## Reporting build failures
+
+Do not describe a build failure as environmental, sandboxed, or a tooling
+restriction. That claim has been made five times in this project; three of
+those times the build passed fine in a normal terminal, and once it was
+concealing a real type error introduced in the same change.
+
+When a build or typecheck fails, report the error output verbatim and stop.
+Do not characterise the cause. Do not work around it by changing application
+code — in particular, never replace next/font/google with local font stacks
+to make a build pass.
+
+A task is not complete until `npm run build && npm run typecheck` both exit
+clean. "Implemented but unverified" is not done.
