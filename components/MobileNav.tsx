@@ -1,7 +1,8 @@
 "use client";
 
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
+import { Link } from "@/i18n/navigation";
 import { NAV } from "@/lib/site-config";
 
 /**
@@ -15,6 +16,7 @@ import { NAV } from "@/lib/site-config";
  * Dropdown sub-navigation is issue #8, not this one.
  */
 export function MobileNav() {
+  const t = useTranslations("nav");
   const [open, setOpen] = useState(false);
 
   return (
@@ -31,13 +33,13 @@ export function MobileNav() {
           <span className="bg-ink block h-px w-5" />
           <span className="bg-ink block h-px w-5" />
         </span>
-        <span>{open ? "Cerrar" : "Menú"}</span>
+        <span>{open ? t("closeMenu") : t("menu")}</span>
       </button>
 
       {open && (
         <nav
           id="mobile-nav"
-          aria-label="Navegación principal"
+          aria-label={t("mainNavigation")}
           className="border-rule bg-paper-raised shadow-card absolute top-full right-0 left-0 border-b"
         >
           <ul className="mx-auto max-w-6xl px-6 py-4">
@@ -48,7 +50,7 @@ export function MobileNav() {
                   onClick={() => setOpen(false)}
                   className="text-ink hover:text-gold-deep block py-3.5 no-underline"
                 >
-                  {item.label}
+                  {t(item.key)}
                 </Link>
               </li>
             ))}

@@ -1,0 +1,37 @@
+{
+  "home": {
+    "heroTitle": "Desencadenando potencial a través de la transformación",
+    "heroSubtitle": "Especialistas en liderazgo y desarrollo empresarial con enfoque cristocéntrico",
+    "ctaExplore": "Explora",
+    "pillarsTitle": "Pilares de Servicio"
+  },
+  "notFound": {
+    "message": "Página no encontrada.",
+    "homeLink": "Volver al inicio"
+  },
+  "nav": {
+    "inicio": "Inicio",
+    "servicios": "Servicios",
+    "academia": "Kinétika Academy",
+    "historias": "Historias de Éxito",
+    "blog": "Blog",
+    "nosotros": "Sobre Nosotros",
+    "contacto": "Contáctanos",
+    "acceder": "Acceder",
+    "menu": "Menú",
+    "closeMenu": "Cerrar",
+    "skipToContent": "Ir al contenido",
+    "mainNavigation": "Navegación principal",
+    "footerNavigation": "Navegación del pie de página"
+  },
+  "pages": {
+    "serviciosTitle": "Servicios",
+    "academiaTitle": "Kinétika Academy",
+    "historiasTitle": "Historias de Éxito",
+    "blogTitle": "Blog",
+    "nosotrosTitle": "Sobre Nosotros",
+    "contactoTitle": "Contáctanos",
+    "accederTitle": "Acceder",
+    "inProgress": "TODO_ES: Esta página está en construcción."
+  }
+}

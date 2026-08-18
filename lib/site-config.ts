@@ -9,8 +9,6 @@
 
 export type NavItem = {
   key: string;
-  /** Spanish label. Source noted per item. */
-  label: string;
   href: string;
 };
 
@@ -23,13 +21,13 @@ export type NavItem = {
  * different things "Courses" and all seven usability participants got lost.
  */
 export const NAV: NavItem[] = [
-  { key: "inicio", label: "Inicio", href: "/" },
-  { key: "servicios", label: "Servicios", href: "/servicios" },
-  { key: "academia", label: "Kinétika Academy", href: "/academia" },
-  { key: "historias", label: "Historias de Éxito", href: "/historias" },
-  { key: "blog", label: "Blog", href: "/blog" },
-  { key: "nosotros", label: "Sobre Nosotros", href: "/nosotros" },
-  { key: "contacto", label: "Contáctanos", href: "/contacto" },
+  { key: "inicio", href: "/" },
+  { key: "servicios", href: "/servicios" },
+  { key: "academia", href: "/academia" },
+  { key: "historias", href: "/historias" },
+  { key: "blog", href: "/blog" },
+  { key: "nosotros", href: "/nosotros" },
+  { key: "contacto", href: "/contacto" },
 ];
 
 /**
