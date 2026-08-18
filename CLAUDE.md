@@ -27,8 +27,8 @@ These come from usability testing with seven participants, not from preference.
 
 **1. Spanish is the source language, not a translation.**
 Write copy in Spanish first. The parent buyer persona lists an English language barrier as a pain
-point. Participants were confused by pages mixing both languages: *"as it is in English and you are
-asking me in Spanish, that confuses me."* A single page must never contain both.
+point. Participants were confused by pages mixing both languages: _"as it is in English and you are
+asking me in Spanish, that confuses me."_ A single page must never contain both.
 
 **2. Never name two things "courses."**
 All seven participants failed or struggled to find SWC College Prep Circuit courses because the top
@@ -44,7 +44,7 @@ Participants complained the font changed page to page. Use the tokens. If you ne
 doesn't exist, add it to the theme rather than inlining it.
 
 **5. Real photographs only.**
-*"The images seem to be taken from Google — it is better to use real photos."* Use a labeled
+_"The images seem to be taken from Google — it is better to use real photos."_ Use a labeled
 placeholder component rather than stock imagery. Never silently fill a slot with a stock photo.
 
 **6. Every form that asks for contact has a message field.**
@@ -58,9 +58,8 @@ phone but no textarea.
 ```
 --color-ink        #161A1D   type, wordmark, footer band — never a full-page background
 --color-paper      #F7F5F0   primary surface
---color-sage       #C8D5BB   section bands
---color-periwinkle #5B51C4   links, interactive states
---color-signal     #1F6F5C   CTAs, scholarship stats
+--color-gold       #C9A227   accent for ink surfaces only
+--color-gold-deep  #8A6410   links and interactive states on paper
 ```
 
 Display face (Cormorant Garamond) is for the wordmark, page titles, and pull quotes only. Everything

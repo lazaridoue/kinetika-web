@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import "./globals.css";
-
-/* The two families named in globals.css. Nothing else gets loaded.
-   Locale routing arrives in issue #5 — until then the site is Spanish only,
-   which matches the default we're committed to anyway. */
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin", "latin-ext"],
@@ -21,6 +19,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Kinétika — Transformando tu potencial en movimiento",
+  // Verbatim from the archived "Sobre Nosotros" section.
   description:
     "Somos una firma consultora que se especializa en la transformación de personas, futuros líderes y empresas startup para desencadenar y poner en movimiento su potencial a través de un método cristocéntrico de trabajo con especialistas expertos en diferentes disciplinas.",
 };
@@ -32,12 +31,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className={`${cormorant.variable} ${inter.variable}`}>
-      <body>
-        {/* Issue #4. Styled in globals.css, hidden until keyboard focus. */}
+      <body className="flex min-h-screen flex-col">
+        {/* Verbatim: the archived site's own skip-link text. */}
         <a href="#main" className="skip-link">
           Ir al contenido
         </a>
-        <main id="main">{children}</main>
+        <Header />
+        <main id="main" className="flex-1">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
