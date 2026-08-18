@@ -60,6 +60,7 @@ phone but no textarea.
 --color-paper      #F7F5F0   primary surface
 --color-gold       #C9A227   accent for ink surfaces only
 --color-gold-deep  #8A6410   links and interactive states on paper
+--color-ink-raised #22272B   dark raised surfaces for cards and panels
 ```
 
 Display face (Cormorant Garamond) is for the wordmark, page titles, and pull quotes only. Everything

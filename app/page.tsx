@@ -73,13 +73,13 @@ export default function Home() {
             {PILARES.map((p) => (
               <li
                 key={p.slug}
-                className="bg-paper-raised shadow-card flex flex-col rounded-lg p-7"
+                className="bg-ink-raised shadow-card text-paper flex flex-col rounded-lg p-7"
               >
-                <h3 className="text-xl">{p.title}</h3>
-                <p className="text-ink-muted mt-3 flex-1">{p.body}</p>
+                <h3 className="text-gold text-xl">{p.title}</h3>
+                <p className="text-paper mt-3 flex-1 opacity-85">{p.body}</p>
                 <Link
                   href={`/servicios/${p.slug}`}
-                  className="text-gold hover:text-gold-deep mt-6 self-start no-underline hover:underline"
+                  className="text-gold mt-6 self-start no-underline hover:underline"
                 >
                   Leer más
                 </Link>

@@ -18,11 +18,13 @@
   */
   --color-ink: #161a1d; /* type, wordmark, footer band */
   --color-paper: #f7f5f0; /* primary surface, warm not clinical */
+  /* ink surfaces only — 2.4:1 on paper, fails AA. */
   --color-gold: #c9a227; /* accent for ink surfaces only */
   --color-gold-deep: #8a6410; /* links, interactive states on paper */
 
   /* Support */
   --color-ink-muted: #5a6169; /* secondary type, 6.1 : 1 on paper */
+  --color-ink-raised: #22272b; /* dark raised surface for cards and panels */
   --color-rule: #e2ded4; /* hairlines, card borders */
   --color-paper-raised: #ffffff; /* cards lifted off the surface */
 
