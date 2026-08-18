@@ -1,0 +1,37 @@
+{
+  "home": {
+    "heroTitle": "Unleashing potential through transformation",
+    "heroSubtitle": "Specialists in leadership and business development with a Christ-centered approach",
+    "ctaExplore": "Explore",
+    "pillarsTitle": "Service Pillars"
+  },
+  "notFound": {
+    "message": "Page not found.",
+    "homeLink": "Go to homepage"
+  },
+  "nav": {
+    "inicio": "Home",
+    "servicios": "Services",
+    "academia": "Kinétika Academy",
+    "historias": "Success Stories",
+    "blog": "Blog",
+    "nosotros": "About Us",
+    "contacto": "Contact Us",
+    "acceder": "Log in",
+    "menu": "Menu",
+    "closeMenu": "Close",
+    "skipToContent": "Skip to content",
+    "mainNavigation": "Main navigation",
+    "footerNavigation": "Footer navigation"
+  },
+  "pages": {
+    "serviciosTitle": "Services",
+    "academiaTitle": "Kinétika Academy",
+    "historiasTitle": "Success Stories",
+    "blogTitle": "Blog",
+    "nosotrosTitle": "About Us",
+    "contactoTitle": "Contact Us",
+    "accederTitle": "Log in",
+    "inProgress": "This page is in progress."
+  }
+}

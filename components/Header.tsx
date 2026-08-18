@@ -1,15 +1,21 @@
-import Link from "next/link";
+"use client";
+
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { NAV } from "@/lib/site-config";
 import { Wordmark } from "./Wordmark";
 import { MobileNav } from "./MobileNav";
+import { LanguageToggle } from "./LanguageToggle";
 
 export function Header() {
+  const t = useTranslations("nav");
+
   return (
     <header className="border-gold bg-paper relative border-b">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
         <Wordmark />
 
-        <nav aria-label="Navegación principal" className="hidden md:block">
+        <nav aria-label={t("mainNavigation")} className="hidden md:block">
           <ul className="flex items-center gap-6">
             {NAV.filter((i) => i.key !== "inicio").map((item) => (
               <li key={item.key}>
@@ -17,7 +23,7 @@ export function Header() {
                   href={item.href}
                   className="text-ink hover:text-gold-deep text-sm no-underline"
                 >
-                  {item.label}
+                  {t(item.key)}
                 </Link>
               </li>
             ))}
@@ -25,17 +31,13 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          {/*
-            Account entry point. The team notes flag "user sign in" as broken.
-            Auth is issue #32 — this routes to a placeholder until then rather
-            than rendering a dead icon like the old site did.
-          */}
           <Link
             href="/acceder"
             className="text-ink hover:text-gold-deep hidden text-sm no-underline md:inline"
           >
-            Acceder
+            {t("acceder")}
           </Link>
+          <LanguageToggle />
           <MobileNav />
         </div>
       </div>

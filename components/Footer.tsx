@@ -1,4 +1,7 @@
-import Link from "next/link";
+"use client";
+
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { NAV, SOCIAL, CONTACT, SITE } from "@/lib/site-config";
 
 /**
@@ -9,6 +12,7 @@ import { NAV, SOCIAL, CONTACT, SITE } from "@/lib/site-config";
  * exist in site-config. A missing link is better than a dead one.
  */
 export function Footer() {
+  const t = useTranslations("nav");
   const social = SOCIAL.filter((s) => s.url !== null);
   const hasContact = Object.values(CONTACT).some((v) => v !== null);
 
@@ -23,7 +27,7 @@ export function Footer() {
             <p className="mt-2 max-w-xs text-sm opacity-70">{SITE.tagline}</p>
           </div>
 
-          <nav aria-label="Navegación del pie de página">
+          <nav aria-label={t("footerNavigation")}>
             <ul className="space-y-2.5">
               {NAV.map((item) => (
                 <li key={item.key}>
@@ -31,7 +35,7 @@ export function Footer() {
                     href={item.href}
                     className="text-paper hover:text-gold text-sm no-underline opacity-80 hover:opacity-100"
                   >
-                    {item.label}
+                    {t(item.key)}
                   </Link>
                 </li>
               ))}
@@ -68,7 +72,7 @@ export function Footer() {
                 href="/contacto"
                 className="text-paper hover:text-gold text-sm no-underline opacity-80 hover:opacity-100"
               >
-                Contáctanos
+                {t("contacto")}
               </Link>
             )}
 
