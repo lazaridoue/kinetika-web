@@ -48,6 +48,17 @@ test("header and footer interactive elements have visible focus states", async (
   }
 });
 
+test("closed dropdown panels are not rendered until opened", async ({
+  page,
+}) => {
+  await page.goto("/es");
+
+  await expect(page.locator("#nav-panel-servicios")).toHaveCount(0);
+  await expect(
+    page.locator("a[href*='community-service-leadership-development']"),
+  ).toHaveCount(0);
+});
+
 test("mobile nav button toggles aria-expanded and can be reached with keyboard", async ({
   page,
 }) => {
@@ -68,6 +79,36 @@ test("mobile nav button toggles aria-expanded and can be reached with keyboard",
   await expect(firstNavLink).toBeVisible();
   await firstNavLink.focus();
   await expect(firstNavLink).toBeFocused();
+});
+
+test("dropdown button opens with Enter, Escape closes and returns focus, and links are tab-reachable", async ({
+  page,
+}) => {
+  await page.goto("/es");
+
+  const servicesButton = page.getByRole("button", { name: "Servicios" });
+  await expect(servicesButton).toBeVisible();
+
+  await expect(page.locator("#nav-panel-servicios")).toHaveCount(0);
+
+  await servicesButton.focus();
+  await page.keyboard.press("Enter");
+
+  const panel = page.locator("#nav-panel-servicios");
+  await expect(panel).toBeVisible();
+
+  const firstLink = panel.getByRole("link").first();
+  await expect(firstLink).toBeVisible();
+
+  await page.keyboard.press("Escape");
+  await expect(panel).not.toBeVisible();
+  await expect(servicesButton).toBeFocused();
+
+  await servicesButton.press("Enter");
+  await expect(panel).toBeVisible();
+
+  await page.keyboard.press("Tab");
+  await expect(firstLink).toBeFocused();
 });
 
 test("language toggle is keyboard-operable and switches locale", async ({

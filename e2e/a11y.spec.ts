@@ -3,7 +3,14 @@ import AxeBuilder from "@axe-core/playwright";
 import { NAV } from "@/lib/site-config";
 
 const locales = ["es", "en"] as const;
-const pages = [...NAV.map((item) => item.href), "/not-found"].flatMap((href) =>
+const childRoutes = NAV.flatMap((item) =>
+  (item.children ?? []).flatMap((child) => [child.href]),
+);
+const pages = [
+  ...NAV.map((item) => item.href),
+  ...childRoutes,
+  "/not-found",
+].flatMap((href) =>
   locales.map((locale) => `/${locale}${href === "/" ? "" : href}`),
 );
 
