@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Legacy WordPress backup — contains student PII and credentials.
+# Never commit. Public repository.
+content/legacy/backup/
+*.sql
+*.sql.gz
+*-db.gz
+updraft*
