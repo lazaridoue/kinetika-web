@@ -5,6 +5,12 @@
     "ctaExplore": "Explore",
     "pillarsTitle": "Service Pillars"
   },
+  "metadata": {
+    "titleTemplate": "Kinétika — %s",
+    "defaultTitle": "Kinétika — Transforming your potential into movement",
+    "homeTitle": "Transforming your potential into movement",
+    "description": "We are a consulting firm specializing in the transformation of people, future leaders, and startup companies to unlock and put their potential in motion through a Christ-centered method of work with specialists and experts in different disciplines."
+  },
   "notFound": {
     "message": "Page not found.",
     "homeLink": "Go to homepage"
