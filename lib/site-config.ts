@@ -7,9 +7,15 @@
  * translated or invented. Anything unverified is null and renders nothing.
  */
 
+export type NavChild = {
+  key: string;
+  href: string;
+};
+
 export type NavItem = {
   key: string;
   href: string;
+  children?: NavChild[];
 };
 
 /**
@@ -22,11 +28,68 @@ export type NavItem = {
  */
 export const NAV: NavItem[] = [
   { key: "inicio", href: "/" },
-  { key: "servicios", href: "/servicios" },
-  { key: "academia", href: "/academia" },
-  { key: "historias", href: "/historias" },
-  { key: "blog", href: "/blog" },
-  { key: "nosotros", href: "/nosotros" },
+  {
+    key: "servicios",
+    href: "/servicios",
+    children: [
+      // SWC College Prep Circuit was removed on the team's instruction, so its omission is deliberate.
+      { key: "ingenieriaInstitucional", href: "/servicios/ingenieria-institucional" },
+      { key: "avanceEmpresarial", href: "/servicios/avance-empresarial" },
+      {
+        key: "enriquecimiento",
+        href: "/servicios/enriquecimiento-academico",
+      },
+      { key: "reset", href: "/servicios/reset" },
+    ],
+  },
+  {
+    key: "academia",
+    href: "/academia",
+    children: [
+      {
+        key: "liderazgo",
+        href: "/academia/community-service-leadership-development",
+      },
+      {
+        key: "desarrolloPersonal",
+        href: "/academia/cursos-desarrollo-personal",
+      },
+      {
+        key: "masterclass",
+        href: "/academia/masterclass-arte-hablar-publico",
+      },
+    ],
+  },
+  {
+    key: "historias",
+    href: "/historias",
+    children: [
+      { key: "videoRoom", href: "/historias#video-room" },
+      { key: "mapa", href: "/historias#mapa" },
+    ],
+  },
+  {
+    key: "blog",
+    href: "/blog",
+    children: [
+      { key: "categoriaAvance", href: "/blog?categoria=avance-empresarial" },
+      {
+        key: "categoriaEnriquecimiento",
+        href: "/blog?categoria=enriquecimiento-academico",
+      },
+      { key: "categoriaReset", href: "/blog?categoria=reset" },
+    ],
+  },
+  {
+    key: "nosotros",
+    href: "/nosotros",
+    children: [
+      { key: "quienesSomos", href: "/nosotros#quienes-somos" },
+      { key: "mision", href: "/nosotros#mision" },
+      { key: "historia", href: "/nosotros#historia" },
+      { key: "staff", href: "/nosotros#staff" },
+    ],
+  },
   { key: "contacto", href: "/contacto" },
 ];
 

@@ -44,17 +44,45 @@ export function MobileNav() {
           className="border-rule bg-paper-raised shadow-card absolute top-full right-0 left-0 border-b"
         >
           <ul className="mx-auto max-w-6xl px-6 py-4">
-            {NAV.map((item) => (
-              <li key={item.key} className="border-rule border-b last:border-0">
-                <Link
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className="text-ink hover:text-gold-deep block py-3.5 no-underline"
+            {NAV.map((item) => {
+              const hasChildren = Boolean(item.children?.length);
+
+              return (
+                <li
+                  key={item.key}
+                  className="border-rule border-b last:border-0"
                 >
-                  {t(item.key)}
-                </Link>
-              </li>
-            ))}
+                  {hasChildren ? (
+                    <div className="py-3.5">
+                      <div className="text-ink text-base font-medium">
+                        {t(item.key)}
+                      </div>
+                      <ul className="mt-2 ml-4 list-none space-y-2">
+                        {item.children!.map((child) => (
+                          <li key={child.key}>
+                            <Link
+                              href={child.href}
+                              onClick={() => setOpen(false)}
+                              className="text-ink hover:text-gold-deep block py-2 text-sm no-underline"
+                            >
+                              {t(child.key)}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      onClick={() => setOpen(false)}
+                      className="text-ink hover:text-gold-deep block py-3.5 no-underline"
+                    >
+                      {t(item.key)}
+                    </Link>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </nav>
       )}
