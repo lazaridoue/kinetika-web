@@ -43,13 +43,19 @@ export function Header() {
 
   return (
     <header className="border-gold bg-paper relative border-b">
-      <div
-        ref={navRef}
-        className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4"
-      >
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
         <Wordmark />
 
-        <nav aria-label={t("mainNavigation")} className="hidden md:block">
+        <nav
+          ref={navRef}
+          aria-label={t("mainNavigation")}
+          onBlur={(event) => {
+            if (!event.currentTarget.contains(event.relatedTarget)) {
+              setOpenMenu(null);
+            }
+          }}
+          className="hidden md:block"
+        >
           <ul className="flex items-center gap-6">
             {NAV.filter((i) => i.key !== "inicio").map((item) => {
               const hasChildren = Boolean(item.children?.length);
@@ -65,7 +71,6 @@ export function Header() {
                         aria-controls={`nav-panel-${item.key}`}
                         onClick={() => toggleMenu(item.key)}
                         onMouseEnter={() => setOpenMenu(item.key)}
-                        onFocus={() => setOpenMenu(item.key)}
                         onKeyDown={(event) => {
                           if (event.key === "Enter" || event.key === " ") {
                             event.preventDefault();
