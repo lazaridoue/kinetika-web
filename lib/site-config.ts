@@ -26,6 +26,7 @@ export type NavItem = {
  * "Kinétika Academy" is deliberate — issue #9. The old site called two
  * different things "Courses" and all seven usability participants got lost.
  */
+// Exactly one navigation destination may be named for courses, and it is Kinétika Academy — issue #9; seven of seven participants failed on this.
 export const NAV: NavItem[] = [
   { key: "inicio", href: "/" },
   {
@@ -33,7 +34,10 @@ export const NAV: NavItem[] = [
     href: "/servicios",
     children: [
       // SWC College Prep Circuit was removed on the team's instruction, so its omission is deliberate.
-      { key: "ingenieriaInstitucional", href: "/servicios/ingenieria-institucional" },
+      {
+        key: "ingenieriaInstitucional",
+        href: "/servicios/ingenieria-institucional",
+      },
       { key: "avanceEmpresarial", href: "/servicios/avance-empresarial" },
       {
         key: "enriquecimiento",

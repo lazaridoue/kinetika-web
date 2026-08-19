@@ -59,6 +59,33 @@ test("closed dropdown panels are not rendered until opened", async ({
   ).toHaveCount(0);
 });
 
+test("issue #9 keeps Kinétika Academy as the only courses-like top-level destination", async ({
+  page,
+}) => {
+  for (const locale of ["es", "en"]) {
+    await page.goto(`/${locale}`);
+
+    const topLevelItems = page
+      .locator("header nav")
+      .first()
+      .locator(":scope > ul > li > button, :scope > ul > li > a");
+    const names = await topLevelItems.evaluateAll((nodes) =>
+      nodes.map((node) =>
+        (node.getAttribute("aria-label") ?? node.textContent ?? "").trim(),
+      ),
+    );
+    const coursesLike = names.filter((name) =>
+      /curso|course|academ/i.test(name),
+    );
+
+    expect(
+      coursesLike,
+      "Issue #9: seven of seven usability participants failed to find SWC courses when courses destinations were split across the navigation.",
+    ).toHaveLength(1);
+    expect(coursesLike[0]).toBe("Kinétika Academy");
+  }
+});
+
 test("mobile nav button toggles aria-expanded and can be reached with keyboard", async ({
   page,
 }) => {
